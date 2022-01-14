@@ -8,6 +8,17 @@ import {
 } from 'react-native';
 import {SmartlookSensitiveComponent} from 'smartlook-react-native-wrapper/lib/commonjs';
 
+const TInput = props => (
+  <TextInput
+    value={props.value}
+    onChangeText={props.onChangeText}
+    placeholder={props.placeholder}
+    placeholderTextColor="#B6B6B6"
+    secureTextEntry={props.secureTextEntry}
+    style={styles.input}
+  />
+);
+
 const Input = ({
   containerStyle,
   handleSecureText,
@@ -24,13 +35,11 @@ const Input = ({
       <View style={containerStyle}>
         <Text style={styles.label}>{label}</Text>
         <View style={[styles.container, styles.inputGrid]}>
-          <TextInput
+          <TInput
             value={value}
             onChangeText={onChangeText}
             placeholder={placeholder}
-            placeholderTextColor="#B6B6B6"
             secureTextEntry={secureText}
-            style={styles.input}
           />
           <TouchableOpacity
             style={styles.toggleView}

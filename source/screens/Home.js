@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {View} from 'react-native';
+import {Button, View} from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import Smartlook from 'smartlook-react-native-wrapper';
 import ActivityLoader from '../components/ActivityLoader';
 import {Input} from '../components/Input';
@@ -23,16 +24,22 @@ const Home = () => {
 
   return (
     <View style={styles.background}>
-      <ActivityLoader visible={true} />
-      <Input
-        containerStyle={styles.input}
-        label="Sample Input"
-        value={value}
-        onChangeText={changeInput}
-        placeholder="Type here..."
-        secureText={secured}
-        handleSecureText={handleSecureText}
-      />
+      <KeyboardAwareScrollView
+        bounces={false}
+        keyboardShouldPersistTaps="handled">
+        <ActivityLoader visible={false} />
+        <Input
+          containerStyle={styles.input}
+          label="Sample Input"
+          value={value}
+          onChangeText={changeInput}
+          placeholder="Type here..."
+          secureText={secured}
+          handleSecureText={handleSecureText}
+        />
+
+        <Button title="Submit" color="#000000" />
+      </KeyboardAwareScrollView>
     </View>
   );
 };
