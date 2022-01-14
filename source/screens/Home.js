@@ -38,7 +38,7 @@ const Home = () => {
           handleSecureText={handleSecureText}
         />
 
-        <Button title="Submit" color="#000000" />
+        <Button title="Submi" color="#000000" />
       </KeyboardAwareScrollView>
     </View>
   );
