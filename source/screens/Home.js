@@ -33,7 +33,7 @@ const Home = () => {
           label="Sample Input"
           value={value}
           onChangeText={changeInput}
-          placeholder="Type here..."
+          placeholder="Type here...."
           secureText={secured}
           handleSecureText={handleSecureText}
         />
